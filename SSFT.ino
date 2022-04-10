@@ -1,23 +1,23 @@
 
 #define SIGNAL_PIN A0
-#define LED 23
 int value = 0; // variable to store the sensor value
 
 void setup() {
   Serial.begin(9600);
-  pinMode(LED, OUTPUT);
+  pinMode(23, OUTPUT);
 }
 
 void loop() {
                // wait 10 milliseconds
   value = analogRead(SIGNAL_PIN); // read the analog value from sensor
-  
+  if(value > 50) {
+    digitalWrite(23,HIGH);
+    
+    }else{digitalWrite(23,LOW);}
   Serial.print("Sensor value: ");
   Serial.println(value);
 
-  while(SIGNAL_PIN > 0.5) {
-    digitalWrite(LED, HIGH);
-    
-    }
+
+   delay(100);
   
 }
