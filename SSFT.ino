@@ -10,7 +10,7 @@ void setup() {
 void loop() {
                // wait 10 milliseconds
   value = analogRead(SIGNAL_PIN); // read the analog value from sensor
-  if(value > 50) {
+  if(value > 120) {
     digitalWrite(23,HIGH);
     
     }else{digitalWrite(23,LOW);}
